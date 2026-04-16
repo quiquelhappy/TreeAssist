@@ -264,7 +264,7 @@ public class BlockUtils {
                 TreeAssist.instance.treeAdd(leaves);
 
                 CleanRunner cleaner = (new CleanRunner(leaves, delay, new LinkedHashSet<>(breakables), Material.AIR, true, new ArrayList<>()));
-                cleaner.runTaskTimer(TreeAssist.instance, delay, delay);
+                TreeAssist.getScheduler().runAtLocationTimer(block.getLocation(), cleaner, delay, delay);
             }
         }
     }

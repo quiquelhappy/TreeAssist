@@ -494,7 +494,7 @@ public class TreeAssist extends CorePlugin {
                     String.valueOf(coolDown)));
         }
         CoolDownCounter cc = new CoolDownCounter(player, coolDown);
-        cc.runTaskTimer(this, 20L, 20L);
+        TreeAssist.getScheduler().runTimer(cc, 20L, 20L);
         coolDowns.put(player.getName(), cc);
     }
 
