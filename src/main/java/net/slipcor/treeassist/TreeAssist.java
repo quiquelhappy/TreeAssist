@@ -316,7 +316,7 @@ public class TreeAssist extends CorePlugin {
     }
 
     public void onDisable() {
-        this.getServer().getScheduler().cancelTasks(this);
+        TreeAssist.getScheduler().cancelAllTasks();
         if (this.blockList instanceof FlatFileBlockList) {
             blockList.save(true);
         }
